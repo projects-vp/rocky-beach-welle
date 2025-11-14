@@ -11,6 +11,8 @@ const client_secret = "68a7cf119df74223b40d1585eb476f2a";
 const refreshToken =
   "AQA7h6RHUfMcOiaqXf-EKRy-zyQwwvSZjDbGrzZzKpqdPaQVA2yb9ft0MUsyThDAdV4D2EZgW4x7IlMznp4uxsa1c7g0MqkW6R0tePQhBPfnS-n4kJqJd2V45e_220aY-Qs";
 
+let currentAccessToken = null;
+
 app.get("/refresh_token", function (req, res) {
   var authOptions = {
     url: "https://accounts.spotify.com/api/token",
@@ -29,12 +31,13 @@ app.get("/refresh_token", function (req, res) {
 
   request.post(authOptions, function (error, response, body) {
     if (!error && response.statusCode === 200) {
-      var access_token = body.access_token,
-        refresh_token = body.refresh_token || refresh_token;
+      currentAccessToken = body.access_token;
       res.send({
-        access_token: access_token,
+        access_token: currentAccessToken,
         refresh_token: refresh_token,
       });
+    } else {
+      res.status(response.statusCode).send(body);
     }
   });
 });
