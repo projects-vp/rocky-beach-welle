@@ -34,7 +34,7 @@ app.get("/refresh_token", function (req, res) {
       currentAccessToken = body.access_token;
       res.send({
         access_token: currentAccessToken,
-        refresh_token: refresh_token,
+        refresh_token: refreshToken,
       });
     } else {
       res.status(response.statusCode).send(body);
