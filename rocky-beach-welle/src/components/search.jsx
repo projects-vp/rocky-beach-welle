@@ -1,3 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-const [albums, setAlbums] = useState([]);
+function Search({ searchValue, setSearchValue }) {
+  return (
+    <input
+      type="text"
+      placeholder="Folge suchen..."
+      value={searchValue}
+      onChange={(e) => setSearchValue(e.target.value)}
+    />
+  );
+}
+
+export default Search;
