@@ -10,7 +10,9 @@
     "axios": "^1.13.2",
     "bootstrap": "^5.3.8",
     "cors": "^2.8.5",
+    "customize-cra": "^1.0.0",
     "react": "^19.2.0",
+    "react-app-rewired": "^2.2.1",
     "react-dom": "^19.2.0",
     "react-scripts": "5.0.1",
     "request": "^2.88.2",
@@ -39,5 +41,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "less": "^4.4.2",
+    "less-loader": "^12.3.0",
+    "style-loader": "^4.0.0"
   }
 }
