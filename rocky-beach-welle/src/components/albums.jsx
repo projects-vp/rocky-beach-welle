@@ -51,17 +51,19 @@ function AlbumList({ searchValue }) {
       let offset = 0;
       let hasMore = true;
 
-      while (hasMore){
+      while (hasMore) {
         /* Alle Alben abfragen */
         const items = await fetchAlbums(accessToken, offset, limit);
-        allAlbums = [...allAlbums, ...items];
-        if(items.length < limit){
+        allAlbums = [
+          ...allAlbums,
+          ...items,
+        ]; /* neues Array, Komponente wird aktualisiert */
+        if (items.length < limit) {
           hasMore = false;
-        }else{
+        } else {
           offset += limit;
         }
       }
-      
       setAlbums(allAlbums);
     }
 
