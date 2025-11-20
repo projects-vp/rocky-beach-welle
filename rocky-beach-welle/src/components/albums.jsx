@@ -41,17 +41,31 @@ function AlbumList({ searchValue }) {
   }
 
   useEffect(() => {
-    async function load() {
+    async function loadAll() {
       const accessToken = await fetchToken();
       if (!accessToken) return;
       /* Access Token in State gesetzt */
       setToken(accessToken);
-      /* Alben abfragen */
-      const items = await fetchAlbums(accessToken);
-      setAlbums(items);
+
+      let allAlbums = [];
+      let offset = 0;
+      let hasMore = true;
+
+      while (hasMore){
+        /* Alle Alben abfragen */
+        const items = await fetchAlbums(accessToken, offset, limit);
+        allAlbums = [...allAlbums, ...items];
+        if(items.length < limit){
+          hasMore = false;
+        }else{
+          offset += limit;
+        }
+      }
+      
+      setAlbums(allAlbums);
     }
 
-    load();
+    loadAll();
   }, []);
 
   /* Vorbereitung Suchfilter, wenn kein value -> alle Alben anzeigen */
@@ -59,16 +73,6 @@ function AlbumList({ searchValue }) {
     album.name?.toLowerCase().includes(searchValue?.toLowerCase() || "")
   );
 
-  /* Funktion für Button für weitere Alben laden */
-  async function ladeAlben() {
-    const newOffset = offset + limit; /* Start zum Laden neuer Alben */
-    const moreAlbums = await fetchAlbums(token, newOffset, limit);
-    setAlbums((prev) => [
-      ...prev,
-      ...moreAlbums,
-    ]); /* neue Alben hinten anhängen */
-    setOffset(newOffset);
-  }
   /* Ausgabe der Alben als Liste */
   return (
     <div>
@@ -81,7 +85,6 @@ function AlbumList({ searchValue }) {
           </li>
         ))}
       </ul>
-      <button onClick={ladeAlben}>mehr Alben laden</button>
     </div>
   );
 }
