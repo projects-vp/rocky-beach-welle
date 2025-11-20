@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function AlbumList({ searchValue }) {
+function AlbumList({ searchValue, filterActive }) {
   const [token, setToken] = useState("");
   const [albums, setAlbums] = useState([]);
   const [offset, setOffset] = useState(0);
@@ -71,9 +71,18 @@ function AlbumList({ searchValue }) {
   }, []);
 
   /* Vorbereitung Suchfilter, wenn kein value -> alle Alben anzeigen */
-  const filtered = albums.filter((album) =>
-    album.name?.toLowerCase().includes(searchValue?.toLowerCase() || "")
-  );
+  const filtered = albums.filter((album) => {
+    const matchSearch = album.name
+      ?.toLowerCase()
+      .includes(searchValue?.toLowerCase() || "");
+    if (!filterActive) return matchSearch;
+
+    const exclude = album.name?.toLowerCase().includes("liest...")
+    || album.name?.toLowerCase().includes("adventskalender")
+    || album.name?.toLowerCase().includes("sommer-fälle")
+    ;
+    return matchSearch && !exclude;
+  });
 
   /* Ausgabe der Alben als Liste */
   return (
