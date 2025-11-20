@@ -77,11 +77,16 @@ function AlbumList({ searchValue, filterActive }) {
       .includes(searchValue?.toLowerCase() || "");
     if (!filterActive) return matchSearch;
 
-    const exclude = album.name?.toLowerCase().includes("liest...")
-    || album.name?.toLowerCase().includes("adventskalender")
-    || album.name?.toLowerCase().includes("sommer-fälle")
-    ;
-    return matchSearch && !exclude;
+    const exclude =
+      album.name?.toLowerCase().includes("liest...") ||
+      album.name?.toLowerCase().includes("adventskalender") ||
+      album.name?.toLowerCase().includes("sommer-fälle") ||
+      album.name?.toLowerCase().includes("outro") ||
+      album.name?.toLowerCase().includes("hörspiel");
+    /* weiterer Filterzusatz für zu lange Folgen */
+    const tooManyTracks = album.total_tracks > 40;
+    /* Es werden nur Alben gezeigt welche zur Sucheingabe passen, nicht über exclude ausgeschlossen werden und nicht zu viele Tracks haben. */
+    return matchSearch && !exclude && !tooManyTracks;
   });
 
   /* Ausgabe der Alben als Liste */
