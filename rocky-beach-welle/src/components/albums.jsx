@@ -95,9 +95,15 @@ function AlbumList({ searchValue, filterActive }) {
       <ul className="episode-list">
         {filtered.map((album) => (
           <li key={album.id} className="episode">
-            <img src={album.images?.[0]?.url} alt={album.name} width="100%" />
-            <p className="episode-title">{album.name}</p>
-            <p>{album.release_date}</p>
+            <a
+              href={album.external_urls?.spotify}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={album.images?.[0]?.url} alt={album.name} width="100%" />
+              <p className="episode-title">{album.name}</p>
+              <p>{album.release_date}</p>
+            </a>
           </li>
         ))}
       </ul>
