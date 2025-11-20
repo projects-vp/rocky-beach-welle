@@ -1,9 +1,6 @@
 
 #root {
-    margin:0;
-    padding:40px;
   .episode-list {
-    margin-top:50px;
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -12,17 +9,19 @@
     padding:0;
     .episode {
       flex-basis:20%;
+      a{
+        text-decoration: none;
       .episode-title {
         font-weight: 700;
-        font-size: 20px;
+        font-size: 18px;
       }
+      }
+
     }
   }
 }
 @media screen and (max-width: 850px) {
     #root {
-    margin:0;
-    padding:20px;
   .episode-list {
     margin-top:50px;
     display: flex;

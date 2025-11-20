@@ -8,12 +8,17 @@ function App() {
   const [filterActive, setFilterActive] = useState(false);
 
   return (
-    <div>
-      <Search searchValue={searchValue} setSearchValue={setSearchValue} />
-      <button onClick={() => setFilterActive((prev) => !prev)}>
-        {filterActive
-          ? "Sonderfolgen ausgeblendet" : "Sonderfolgen eingeblendet"}
-      </button>
+    <div className="container mt-4">
+      <nav className="navbar">
+        <div className="container-fluid">
+          <Search searchValue={searchValue} setSearchValue={setSearchValue} />
+          <button onClick={() => setFilterActive((prev) => !prev)}>
+            {filterActive
+              ? "Sonderfolgen ausgeblendet"
+              : "Sonderfolgen eingeblendet"}
+          </button>
+        </div>
+      </nav>
       <AlbumList searchValue={searchValue} filterActive={filterActive} />
     </div>
   );
