@@ -91,11 +91,12 @@ function AlbumList({ searchValue, filterActive }) {
 
   /* Ausgabe der Alben als Liste */
   return (
-    <div>
-      <ul className="episode-list">
+    <div className="grid">
+      <ul className="episode-list row list-unstyled">
         {filtered.map((album) => (
-          <li key={album.id} className="episode card">
-            <a
+          <li key={album.id} className="episode col-md-3 mb-4">
+            <div className="card h-100">
+ <a
               href={album.external_urls?.spotify}
               target="_blank"
               rel="noopener noreferrer"
@@ -111,6 +112,8 @@ function AlbumList({ searchValue, filterActive }) {
                 <p className="card-text">{album.release_date}</p>
               </div>
             </a>
+            </div>
+           
           </li>
         ))}
       </ul>
