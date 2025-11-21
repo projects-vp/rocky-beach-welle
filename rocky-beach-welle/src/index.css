@@ -2,51 +2,60 @@ html {
   scrollbar-gutter: stable;
   body[data-bs-theme="dark"] {
     background-color: rgb(7, 23, 53) !important;
-    h1 {
-      font-size: 70px;
-    }
-    .subtitle {
-      font-size: 25px;
-      margin-bottom: 50px;
-    }
-    .filters {
-      padding-bottom: 50px;
-      input {
-        background-color: #ffffff;
-        color: #141414;
-        width: 300px;
-        &:focus {
-          background-color: #fff;
-          color: #525252;
-        }
-        &::placeholder {
-          color: #525252;
-        }
+    background-image: url(../src/img/titel-welle.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    .background {
+      padding-top:15vh;
+      h1 {
+        font-size: 70px;
       }
-    }
-
-    .card {
-      background-color: transparent;
-      color: #f5f5f5;
-      border: none;
-      a {
-        img {
-          transition: 0.2s ease-in-out;
-          &:hover {
-            box-shadow: rgba(255, 255, 255, 0.07) 0px 1px 2px,
-              rgba(255, 255, 255, 0.07) 0px 2px 4px,
-              rgba(255, 255, 255, 0.07) 0px 4px 8px,
-              rgba(255, 255, 255, 0.07) 0px 8px 16px,
-              rgba(255, 255, 255, 0.07) 0px 16px 32px,
-              rgba(255, 255, 255, 0.07) 0px 32px 64px;
-            transition: 0.2s ease-in-out;
+      .subtitle {
+        font-size: 25px;
+        margin-bottom: 50px;
+      }
+      .filters {
+        padding-bottom: 50px;
+        input {
+          background-color: #ffffff;
+          color: #141414;
+          width: 300px;
+          &:focus {
+            background-color: #fff;
+            color: #525252;
+          }
+          &::placeholder {
+            color: #525252;
           }
         }
-        .card-body {
-          padding: 25px 0 15px;
-          .episode-title {
-            color: #f5f5f5;
-            font-weight: 700;
+      }
+
+      .card {
+        background-color: transparent;
+        color: #f5f5f5;
+        border: none;
+        a {
+          img {
+            transition: 0.2s ease-in-out;
+            &:hover {
+              box-shadow: rgba(255, 255, 255, 0.07) 0px 1px 2px,
+                rgba(255, 255, 255, 0.07) 0px 2px 4px,
+                rgba(255, 255, 255, 0.07) 0px 4px 8px,
+                rgba(255, 255, 255, 0.07) 0px 8px 16px,
+                rgba(255, 255, 255, 0.07) 0px 16px 32px,
+                rgba(255, 255, 255, 0.07) 0px 32px 64px;
+              transition: 0.2s ease-in-out;
+            }
+          }
+          .card-body {
+            padding: 25px 0 15px;
+            .episode-title {
+              color: #f5f5f5;
+              font-weight: 700;
+            }
           }
         }
       }

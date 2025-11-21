@@ -8,7 +8,7 @@ function App() {
   const [filterActive, setFilterActive] = useState(false);
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4 background">
       <header>
         <h1>Rocky Beach Welle</h1>
         <p className="subtitle">
