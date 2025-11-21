@@ -9,30 +9,30 @@ html {
     background-attachment: fixed;
     min-height: 100vh;
     .background {
-      padding-top:15vh;
-      h1 {
-        font-size: 70px;
-      }
-      .subtitle {
-        font-size: 25px;
-        margin-bottom: 50px;
-      }
-      .filters {
-        padding-bottom: 50px;
-        input {
-          background-color: #ffffff;
-          color: #141414;
-          width: 300px;
-          &:focus {
-            background-color: #fff;
-            color: #525252;
-          }
-          &::placeholder {
-            color: #525252;
+      padding-top: 15vh;
+      header {
+        h1 {
+          font-size: 70px;
+        }
+        .subtitle {
+          font-size: 25px;
+          margin-bottom: 50px;
+        }
+        .filters {
+          input {
+            background-color: #ffffff;
+            color: #141414;
+            width: 300px;
+            &:focus {
+              background-color: #fff;
+              color: #525252;
+            }
+            &::placeholder {
+              color: #525252;
+            }
           }
         }
       }
-
       .card {
         background-color: transparent;
         color: #f5f5f5;
