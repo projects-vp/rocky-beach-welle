@@ -7,6 +7,7 @@ function Search({ searchValue, setSearchValue }) {
       placeholder="Folge suchen..."
       value={searchValue}
       onChange={(e) => setSearchValue(e.target.value)}
+      className="form-control"
     />
   );
 }

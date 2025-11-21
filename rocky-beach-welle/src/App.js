@@ -9,7 +9,6 @@ function App() {
 
   return (
     <div className="container mt-4">
-      <nav className="navbar">
         <div className="container-fluid">
           <Search searchValue={searchValue} setSearchValue={setSearchValue} />
           <button onClick={() => setFilterActive((prev) => !prev)}>
@@ -18,7 +17,6 @@ function App() {
               : "Sonderfolgen eingeblendet"}
           </button>
         </div>
-      </nav>
       <AlbumList searchValue={searchValue} filterActive={filterActive} />
     </div>
   );

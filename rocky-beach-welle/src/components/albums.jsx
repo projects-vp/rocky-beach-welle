@@ -5,6 +5,7 @@ function AlbumList({ searchValue, filterActive }) {
   const [albums, setAlbums] = useState([]);
   const [offset, setOffset] = useState(0);
   const limit = 50; /* Anzahl Alben pro Anfrage */
+  const [loading, setLoading] = useState(true);
 
   /* Token beziehen */
   async function fetchToken() {
@@ -65,6 +66,7 @@ function AlbumList({ searchValue, filterActive }) {
         }
       }
       setAlbums(allAlbums);
+      setLoading(false);
     }
 
     loadAll();
@@ -88,7 +90,16 @@ function AlbumList({ searchValue, filterActive }) {
     /* Es werden nur Alben gezeigt welche zur Sucheingabe passen, nicht über exclude ausgeschlossen werden und nicht zu viele Tracks haben. */
     return matchSearch && !exclude && !tooManyTracks;
   });
-
+  /* Ladeanimation für Loading State */
+  if (loading) {
+    return (
+      <div class="d-flex justify-content-center">
+        <div className="spinner-border text-light" role="status">
+          <span className="visually-hidden">Lade Folgen...</span>
+        </div>
+        </div>
+    );
+  }
   /* Ausgabe der Alben als Liste */
   return (
     <div className="grid">
@@ -96,24 +107,23 @@ function AlbumList({ searchValue, filterActive }) {
         {filtered.map((album) => (
           <li key={album.id} className="episode col-md-3 mb-4">
             <div className="card h-100">
- <a
-              href={album.external_urls?.spotify}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src={album.images?.[0]?.url}
-                alt={album.name}
-                width="100%"
-                className="card-img-top"
-              />
-              <div className="card-body">
-                <p className="episode-title card-title">{album.name}</p>
-                <p className="card-text">{album.release_date}</p>
-              </div>
-            </a>
+              <a
+                href={album.external_urls?.spotify}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={album.images?.[0]?.url}
+                  alt={album.name}
+                  width="100%"
+                  className="card-img-top"
+                />
+                <div className="card-body">
+                  <p className="episode-title card-title">{album.name}</p>
+                  <p className="card-text">{album.release_date}</p>
+                </div>
+              </a>
             </div>
-           
           </li>
         ))}
       </ul>
