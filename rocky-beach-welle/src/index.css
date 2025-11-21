@@ -1,21 +1,59 @@
-body[data-bs-theme="dark"] {
-  background-color: rgb(7, 23, 53) !important;
-  .card {
-    background-color: transparent;
-    color: #f5f5f5;
-    border: none;
-    a {
-      .card-body{
-        padding: 15px 0;
-      .episode-title {
-        color: #f5f5f5;
+html {
+  scrollbar-gutter: stable;
+  body[data-bs-theme="dark"] {
+    background-color: rgb(7, 23, 53) !important;
+    h1 {
+      font-size: 70px;
+    }
+    .subtitle {
+      font-size: 25px;
+      margin-bottom: 50px;
+    }
+    .filters {
+      padding-bottom: 50px;
+      input {
+        background-color: #ffffff;
+        color: #141414;
+        width: 300px;
+        &:focus {
+          background-color: #fff;
+          color: #525252;
+        }
+        &::placeholder {
+          color: #525252;
+        }
       }
-      }
+    }
 
+    .card {
+      background-color: transparent;
+      color: #f5f5f5;
+      border: none;
+      a {
+        img {
+          transition: 0.2s ease-in-out;
+          &:hover {
+            box-shadow: rgba(255, 255, 255, 0.07) 0px 1px 2px,
+              rgba(255, 255, 255, 0.07) 0px 2px 4px,
+              rgba(255, 255, 255, 0.07) 0px 4px 8px,
+              rgba(255, 255, 255, 0.07) 0px 8px 16px,
+              rgba(255, 255, 255, 0.07) 0px 16px 32px,
+              rgba(255, 255, 255, 0.07) 0px 32px 64px;
+            transition: 0.2s ease-in-out;
+          }
+        }
+        .card-body {
+          padding: 25px 0 15px;
+          .episode-title {
+            color: #f5f5f5;
+            font-weight: 700;
+          }
+        }
+      }
     }
   }
 }
-
+/* Responsiv */
 @media (max-width: 575.98px) {
   .card {
     a {
@@ -23,6 +61,9 @@ body[data-bs-theme="dark"] {
       flex-direction: row;
       img {
         width: 25%;
+      }
+      .card-body {
+        padding-left: 20px !important;
       }
     }
   }

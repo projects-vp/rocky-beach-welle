@@ -9,15 +9,28 @@ function App() {
 
   return (
     <div className="container mt-4">
-        <div className="container-fluid">
+      <header>
+        <h1>Rocky Beach Welle</h1>
+        <p className="subtitle">
+          Fanprojekt zu den Drei ??? - Alle Alben auf Spotify
+        </p>
+        <div className="d-flex mt-4 mb-4 gap-3 filters">
           <Search searchValue={searchValue} setSearchValue={setSearchValue} />
-          <button onClick={() => setFilterActive((prev) => !prev)}>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() => setFilterActive((prev) => !prev)}
+          >
             {filterActive
               ? "Sonderfolgen ausgeblendet"
               : "Sonderfolgen eingeblendet"}
           </button>
         </div>
-      <AlbumList searchValue={searchValue} filterActive={filterActive} />
+      </header>
+      <main>
+        <AlbumList searchValue={searchValue} filterActive={filterActive} />
+      </main>
+      <footer></footer>
     </div>
   );
 }
