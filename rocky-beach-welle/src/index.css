@@ -1,53 +1,29 @@
-/* 
-
-#root {
-  .episode-list {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    flex-wrap: wrap;
-    list-style: none;
-    padding:0;
-    .episode {
-      flex-basis:20%;
-      a{
-        text-decoration: none;
+body[data-bs-theme="dark"] {
+  background-color: rgb(7, 23, 53) !important;
+  .card {
+    background-color: transparent;
+    color: #f5f5f5;
+    border: none;
+    a {
+      .card-body{
+        padding: 15px 0;
       .episode-title {
-        font-weight: 700;
-        font-size: 18px;
+        color: #f5f5f5;
       }
       }
 
     }
   }
 }
-@media screen and (max-width: 850px) {
-    #root {
-  .episode-list {
-    margin-top:50px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    list-style: none;
-    padding:0;
-    .episode {
-      display:flex;
-      flex-direction:row;
-      width:100%;
-      .episode-image{
-        width:30%;
-      }
-      .episode-title {
-        font-weight: 700;
-        font-size: 20px;
-        padding-left: 20px;
+
+@media (max-width: 575.98px) {
+  .card {
+    a {
+      display: flex;
+      flex-direction: row;
+      img {
+        width: 25%;
       }
     }
   }
 }
-}
- */
-
- body{
-  background-color:rgb(7, 23, 53) !important;
- }

@@ -93,34 +93,35 @@ function AlbumList({ searchValue, filterActive }) {
   /* Ladeanimation für Loading State */
   if (loading) {
     return (
-      <div class="d-flex justify-content-center">
+      <div className="d-flex justify-content-center align-items-center min-vh-100">
         <div className="spinner-border text-light" role="status">
           <span className="visually-hidden">Lade Folgen...</span>
         </div>
-        </div>
+      </div>
     );
   }
   /* Ausgabe der Alben als Liste */
   return (
     <div className="grid">
-      <ul className="episode-list row list-unstyled">
+      <ul className="episode-list row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 list-unstyled">
         {filtered.map((album) => (
-          <li key={album.id} className="episode col-md-3 mb-4">
+          <li key={album.id} className="episode col mb-4">
             <div className="card h-100">
               <a
                 href={album.external_urls?.spotify}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-decoration-none"
               >
                 <img
                   src={album.images?.[0]?.url}
                   alt={album.name}
+                  className="rounded"
                   width="100%"
-                  className="card-img-top"
                 />
                 <div className="card-body">
                   <p className="episode-title card-title">{album.name}</p>
-                  <p className="card-text">{album.release_date}</p>
+                  <p className="card-text text-muted">{album.release_date}</p>
                 </div>
               </a>
             </div>
