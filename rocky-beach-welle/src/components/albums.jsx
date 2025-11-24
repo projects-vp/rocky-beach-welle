@@ -84,9 +84,13 @@ function AlbumList({ searchValue, filterActive }) {
       album.name?.toLowerCase().includes("adventskalender") ||
       album.name?.toLowerCase().includes("sommer-fälle") ||
       album.name?.toLowerCase().includes("outro") ||
+      album.name?.toLowerCase().includes("auferstehung") ||
+      album.name?.toLowerCase().includes("brainwash") ||
+      album.name?.toLowerCase().includes("das verfluchte schloss") ||
+      album.name?.toLowerCase().includes("das geheimnis der geisterinsel") ||
       album.name?.toLowerCase().includes("hörspiel");
     /* weiterer Filterzusatz für zu lange Folgen */
-    const tooManyTracks = album.total_tracks > 40;
+    const tooManyTracks = album.total_tracks > 50;
     /* Es werden nur Alben gezeigt welche zur Sucheingabe passen, nicht über exclude ausgeschlossen werden und nicht zu viele Tracks haben. */
     return matchSearch && !exclude && !tooManyTracks;
   });
