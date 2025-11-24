@@ -93,7 +93,7 @@ function AlbumList({ searchValue, filterActive }) {
   /* Ladeanimation für Loading State */
   if (loading) {
     return (
-      <div className="d-flex justify-content-center align-items-center">
+      <div className="d-flex justify-content-center align-items-center mb-5">
         <div className="spinner-border text-light" role="status">
           <span className="visually-hidden">Lade Folgen...</span>
         </div>

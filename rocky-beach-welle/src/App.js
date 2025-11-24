@@ -1,12 +1,21 @@
-import "./App.css";
 import AlbumList from "./components/albums";
 import Search from "./components/search";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ScrollButton from "./components/scrollbutton";
+import { Tooltip } from "bootstrap";
 
 function App() {
   const [searchValue, setSearchValue] = useState("");
   const [filterActive, setFilterActive] = useState(false);
+/* Tooltip Bootstrap */
+  useEffect(() => {
+    const tooltipTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="tooltip"]'
+    );
+    [...tooltipTriggerList].forEach(
+      (tooltipTriggerEl) => new Tooltip(tooltipTriggerEl)
+    );
+  }, []);
 
   return (
     <div>
@@ -22,6 +31,9 @@ function App() {
               type="button"
               className={`btn btn-primary ${!filterActive ? "" : "inactive"}`}
               onClick={() => setFilterActive((prev) => !prev)}
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-title="Blendet Folgen mit Überlänge, Playlists und vorgelesene Folgen aus."
             >
               {filterActive
                 ? "Sonderfolgen ausgeblendet"
@@ -56,7 +68,6 @@ function App() {
           </p>
         </div>
       </footer>
-        
     </div>
   );
 }
