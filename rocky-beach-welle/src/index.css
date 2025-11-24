@@ -161,6 +161,7 @@ html {
           font-size: 80px;
           font-weight: 800;
           letter-spacing: 0.2px;
+          text-shadow: 5px 5px 6px rgba(4, 9, 11, 0.25), 0px 0px 0px rgba(56, 189, 248, 0.00);
         }
         .subtitle {
           font-size: 27px;
