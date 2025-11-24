@@ -2,6 +2,7 @@ import "./App.css";
 import AlbumList from "./components/albums";
 import Search from "./components/search";
 import React, { useState } from "react";
+import ScrollButton from "./components/scrollbutton";
 
 function App() {
   const [searchValue, setSearchValue] = useState("");
@@ -30,6 +31,7 @@ function App() {
         </header>
         <main>
           <AlbumList searchValue={searchValue} filterActive={filterActive} />
+          <ScrollButton />
         </main>
       </div>
       <footer>
@@ -54,6 +56,7 @@ function App() {
           </p>
         </div>
       </footer>
+        
     </div>
   );
 }
