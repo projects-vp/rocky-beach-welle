@@ -18,7 +18,7 @@ function App() {
           <Search searchValue={searchValue} setSearchValue={setSearchValue} />
           <button
             type="button"
-            className="btn btn-primary"
+            className={`btn btn-primary ${!filterActive ? "" : "inactive"}`}
             onClick={() => setFilterActive((prev) => !prev)}
           >
             {filterActive
