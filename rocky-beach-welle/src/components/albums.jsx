@@ -116,8 +116,7 @@ function AlbumList({ searchValue, filterActive }) {
                 <img
                   src={album.images?.[0]?.url}
                   alt={album.name}
-                  className="rounded"
-                  width="100%"
+                  className="card-img-top"
                 />
                 <div className="card-body">
                   <p className="episode-title card-title">{album.name}</p>

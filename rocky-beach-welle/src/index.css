@@ -200,6 +200,8 @@ html {
           a {
             img {
               transition: 0.2s ease-in-out;
+              object-fit: contain;
+              aspect-ratio: 1 / 1; 
               &:hover {
                 box-shadow: rgba(255, 255, 255, 0.07) 0px 1px 2px,
                   rgba(255, 255, 255, 0.07) 0px 2px 4px,
@@ -225,29 +227,38 @@ html {
   }
   footer {
     background-color: #00060c;
-    padding-top:30px;
-    padding-bottom:30px;
-    color:#ffffff57;
-    a{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #ffffff57;
+    a {
       text-decoration: none;
-      color:#3e8ec0;
+      color: #3e8ec0;
     }
-    .small{
-      font-size:14px;
+    .small {
+      font-size: 14px;
     }
   }
 }
 /* Responsiv */
 @media (max-width: 575.98px) {
-  h1{
-    font-size:30px;
+  h1 {
+    font-size: 40px !important;
+  }
+  .subtitle {
+    font-size: 25px !important;
+  }
+  .filters {
+    flex-direction: column;
+    input {
+      width: 100% !important;
+    }
   }
   .card {
     a {
       display: flex;
       flex-direction: row;
       img {
-        width: 25%;
+        width: 120px;
       }
       .card-body {
         padding-left: 20px !important;
