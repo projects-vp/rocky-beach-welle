@@ -185,14 +185,14 @@ html {
             &:hover {
               background-color: #316a8d;
             }
-            &.inactive{
+            &.inactive {
               background-color: #1a4865;
             }
           }
         }
       }
       main {
-        padding-top:40px;
+        padding-top: 40px;
         .card {
           background-color: transparent;
           color: #f5f5f5;
@@ -223,9 +223,25 @@ html {
       }
     }
   }
+  footer {
+    background-color: #00060c;
+    padding-top:30px;
+    padding-bottom:30px;
+    color:#ffffff57;
+    a{
+      text-decoration: none;
+      color:#3e8ec0;
+    }
+    .small{
+      font-size:14px;
+    }
+  }
 }
 /* Responsiv */
 @media (max-width: 575.98px) {
+  h1{
+    font-size:30px;
+  }
   .card {
     a {
       display: flex;
