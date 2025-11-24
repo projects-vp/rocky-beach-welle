@@ -3,7 +3,6 @@ const request = require("request");
 const cors = require("cors");
 const app = express();
 app.use(cors());
-const axios = require("axios");
 
 const client_id = "42b059cb4a9c4321a4915dd189018185";
 const client_secret = "68a7cf119df74223b40d1585eb476f2a";
