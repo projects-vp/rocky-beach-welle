@@ -2,7 +2,6 @@
 Eine Webseite mit Spotify-Anbindung speziell für die Drei ???
 
 React-Projekt mit Spotify-API-Integration. 
-Damit die App Daten abrufen kann, muss zuerst ein Tokenserver gestartet werden.
 
 <h2>Repository clonen</h2>
 git clone https://github.com/projects-vp/rocky-beach-welle.git
