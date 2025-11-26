@@ -15,8 +15,8 @@ npm install
 Damit die Verbindung zur Spotify-API funktioniert, müssen die Zugangsdaten in einer `.env`-Datei im Ordner `token/` hinterlegt werden.  
 Die Datei `.env.example` zeigt die benötigten Variablen:
 
-CLIENT_ID=
-CLIENT_SECRET=
+CLIENT_ID=<br>
+CLIENT_SECRET=<br>
 REFRESH_TOKEN=
 
 Trage hier deine eigenen Werte aus der [Spotify Developer Console](https://developer.spotify.com/dashboard/) ein.  
