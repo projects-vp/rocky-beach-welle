@@ -3,12 +3,11 @@ const request = require("request");
 const cors = require("cors");
 const app = express();
 app.use(cors());
+require("dotenv").config();
 
-const client_id = "42b059cb4a9c4321a4915dd189018185";
-const client_secret = "68a7cf119df74223b40d1585eb476f2a";
-
-const refreshToken =
-  "AQA7h6RHUfMcOiaqXf-EKRy-zyQwwvSZjDbGrzZzKpqdPaQVA2yb9ft0MUsyThDAdV4D2EZgW4x7IlMznp4uxsa1c7g0MqkW6R0tePQhBPfnS-n4kJqJd2V45e_220aY-Qs";
+const client_id = process.env.CLIENT_ID;
+const client_secret = process.env.CLIENT_SECRET;
+const refreshToken = process.env.REFRESH_TOKEN;
 
 let currentAccessToken = null;
 
@@ -44,3 +43,4 @@ app.get("/refresh_token", function (req, res) {
 app.listen(3002, () => {
   console.log("Listening on 3002");
 });
+
