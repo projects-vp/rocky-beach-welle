@@ -22,7 +22,7 @@ REFRESH_TOKEN=
 Trage hier deine eigenen Werte aus der [Spotify Developer Console](https://developer.spotify.com/dashboard/) ein.  
 Die `.env` ist bereits in `.gitignore` eingetragen und wird nicht ins Repository übernommen.
 
-Token Server starten
+<h2>Token Server starten</h2>
 cd token
 
 node get-token.js
