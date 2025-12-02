@@ -32,3 +32,6 @@ cd ..
 npm start
 
 http://localhost:3000
+
+
+Live-Seite ansehen: https://rocky-beach-welle.de/
